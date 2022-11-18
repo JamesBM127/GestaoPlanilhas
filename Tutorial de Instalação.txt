@@ -1,0 +1,11 @@
+Para instalar o software de Gestão de Planilhas, é necessário, primeiramente, instalar o certificado "GestaoEstoqueUI_1.0.0.0_x86.cer".
+
+1. Clique no botão direito do mouse em cima do instalador "GestaoEstoqueUI_1.0.0.0_x86.msix" > "Propriedades" ou aperte as teclas "ALT + Enter".
+2. Na aba superior, clique em "Assinaturas Digitais" > Selecione o certificado e clique em "Detalhes".
+3. "Exibir Certificado" > "Instalar Certificado..." > selecione "Máquina Local" > Avançar.
+3.1. Se necessário, permita que o aplicativo faça alterações em seu dispositivo.
+4. Selecione "Colocar todos os certificados no repositório a seguir" > clique em "Procurar".
+5. Selecione o repositório "Pessoas Confiáveis" > "Ok" > "Avançar" > "Concluir".
+
+O software está pronto para ser instalado.
+Para instalar, basta abrir o programa "GestaoEstoqueUI_1.0.0.0_x86.msix" e clicar instalar.

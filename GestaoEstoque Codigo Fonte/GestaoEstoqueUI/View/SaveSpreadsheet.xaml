@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoEstoqueUI.View.SaveSpreadsheet"
+             xmlns:viewmodel="clr-namespace:GestaoEstoqueUI.ViewModel"
+             x:DataType="viewmodel:SpreadsheetViewModel"
+             Title="Salvar Planilha">
+
+    <VerticalStackLayout BackgroundColor="#FFF"
+                         Padding="35">
+
+        <Label Text="Planilha"
+               FontSize="25"
+               TextColor="Black"
+               Padding="5"/>
+
+        <Grid ColumnDefinitions="*,1"
+              RowDefinitions="*,2">
+
+            <Entry x:Name="entryPath"
+               Text="{Binding Path}"
+               Placeholder="Selecione a planilha que será salva!"
+               MinimumWidthRequest="750"
+               MaximumWidthRequest="700"
+               MaxLength="260"
+               TextColor="White"
+               BackgroundColor="#383838"
+               HorizontalOptions="Start"/>
+
+            <Button Text="..."
+                    TextColor="White"
+                    BackgroundColor="#303030"
+                    FontSize="Title"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    CornerRadius="0"
+                    Margin="760,0,0,0"
+                    Command="{Binding GetFilePathCommand}"/>
+
+        </Grid>
+
+        <HorizontalStackLayout BackgroundColor="White">
+
+            <Button Text="Voltar"
+                TextColor="White"
+                BackgroundColor="Red"
+                WidthRequest="100"
+                FontSize="20"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="600,165,0,0"
+                CornerRadius="4"
+                Command="{Binding GoToBackCommand}"/>
+
+            <Button Text="Salvar"
+                TextColor="White"
+                BackgroundColor="#303030"
+                WidthRequest="100"
+                FontSize="20"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="15,0,0,0"
+                CornerRadius="4"
+                Command="{Binding SaveSpreadsheetInDbCommand}"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

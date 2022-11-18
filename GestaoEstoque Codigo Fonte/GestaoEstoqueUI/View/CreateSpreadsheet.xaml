@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GestaoEstoqueUI.ViewModel"
+             x:DataType="viewmodel:SpreadsheetViewModel"
+             Title="Criar Planilha"
+             x:Class="GestaoEstoqueUI.View.CreateSpreadsheet">
+
+    <VerticalStackLayout BackgroundColor="#FFF"
+                         Padding="35">
+
+        <Label Text="Nome da Planilha"
+               FontSize="20"
+               TextColor="Black"
+               Padding="5"/>
+
+        <Entry x:Name="entryName"
+               Placeholder="Digite o nome do arquivo!"
+               Text="{Binding SpreadsheetName}"
+               MinimumWidthRequest="750"
+               MaximumWidthRequest="700"
+               MaxLength="50"
+               TextColor="White"
+               BackgroundColor="#383838"
+               HorizontalOptions="Start"/>
+
+        <Label Text="Local"
+               FontSize="20"
+               TextColor="Black"
+               Padding="5"/>
+
+        <Grid ColumnDefinitions="*,1"
+              RowDefinitions="*,2">
+            
+            <Entry x:Name="entryPath"
+               Text="{Binding Path}"
+               Placeholder="Selecione o local que a planilha será salva!"
+               MinimumWidthRequest="750"
+               MaximumWidthRequest="700"
+               MaxLength="260"
+               TextColor="White"
+               BackgroundColor="#383838"
+               HorizontalOptions="Start"/>
+
+            <Button Text="..."
+                    TextColor="White"
+                    BackgroundColor="#303030"
+                    FontSize="Title"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    CornerRadius="0"
+                    Margin="760,0,0,0"
+                    Command="{Binding GetFolderPathCommand}"/>
+
+        </Grid>
+
+        <HorizontalStackLayout BackgroundColor="White">
+            
+            
+            
+            <Button Text="    Criar &#10; Template"
+                    TextColor="White"
+                    BackgroundColor="#303030"
+                    WidthRequest="100"
+                    FontSize="15"
+                    VerticalOptions="Start"
+                    Margin="0,87,0,0"
+                    CornerRadius="4"
+                    Command="{Binding CreateSpreadsheetTemplateCommand}"/>
+
+            <Button Text="Voltar"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    WidthRequest="100"
+                    FontSize="20"
+                    VerticalOptions="End"
+                    HorizontalOptions="End"
+                    Margin="500,0,0,0"
+                    CornerRadius="4"
+                    Command="{Binding GoToBackCommand}"/>
+
+            <Button Text="Criar"
+                TextColor="White"
+                BackgroundColor="#303030"
+                WidthRequest="100"
+                FontSize="20"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="15,0,0,0"
+                CornerRadius="4"
+                Command="{Binding CreateSpreadsheetFromDbCommand}"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

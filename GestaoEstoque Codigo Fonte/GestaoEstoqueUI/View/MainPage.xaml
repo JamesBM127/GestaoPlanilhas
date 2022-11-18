@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GestaoEstoqueUI.ViewModel"
+             x:DataType="viewmodel:MainPageViewModel"
+             Title="Gestão de Estoque"
+             x:Class="GestaoEstoqueUI.View.MainPage"
+             BackgroundColor="#FFF">
+
+    <Grid ColumnDefinitions="*,*"
+          RowDefinitions="*,*">
+
+        <Button Text="Salvar"
+                Command="{Binding GoToSaveSpreadsheetCommand}"
+                TextColor="White"
+                FontSize="30"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                HeightRequest="150"
+                WidthRequest="150"
+                Margin="25,0"
+                Grid.Column="0"
+                BackgroundColor="#303030"/>
+
+        <Label Text="Salva uma planilha no banco de dados"
+                   HorizontalOptions="End"
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="25,10"/>
+
+        <Button Text="Criar"
+                Command="{Binding GoToCreateSpreadsheetCommand}"
+                TextColor="White"
+                FontSize="30"
+                VerticalOptions="End"
+                HorizontalOptions="Start"
+                HeightRequest="150"
+                WidthRequest="150"
+                Margin="25,0"
+                Grid.Column="1"
+                BackgroundColor="#303030"/>
+
+        <Label Text="Cria uma planilha a partir de dados salvos"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               Grid.Row="1"
+               Grid.Column="1"
+               Margin="25,10"/>
+
+    </Grid>
+</ContentPage>
